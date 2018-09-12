@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="node_modules/ionicons/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>IGCSE Toolkit</title>
+</head>
+<body>
+<div class="row full">
+    <div class="col s1 vertical-tabs full" id="vertical-tabs">
+        <a class="v-tab-links darken-4" onclick="openVTab(event, 'past-paper-div')" id="v-defaultOpen">
+        <i class="icon ion-md-paper"></i>
+        </a>
+        <a class="v-tab-links darken-4" onclick="openVTab(event, 'note-div')">
+            <i class="icon ion-md-list"></i>
+        </a>
+        <a class="v-tab-links darken-4" onclick="openVTab(event, 'resource-div')">
+            <i class="icon ion-md-book"></i>
+        </a>
+    </div>
+    <div class="col s11 content full" id="content">
+        <div class="">
+            <div class="v-tab-content" id="past-paper-div">
+                <div id="past-paper-list">
+
+                </div>
+                <div id="past-paper-content">
+                    <iframe src="./src/past-papers/Biology-(0610)/2008/2008 Oct_Nov/0610_w08_gt.pdf" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="v-tab-content" id="note-div">
+                Note
+            </div>
+            <div class="v-tab-content" id="resource-div">
+                Resource
+            </div>
+        </div>
+    </div>
+    <div class="col s12 red lighten-2 white-text center-align">
+        Made By Mudit Somani
+    </div>
+</div>
+    
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/hammerjs/hammer.min.js"></script>
+<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script src="src/vertical-tabs.js"></script>
+<script src="src/past-paper.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+$c-grey : #212121;
+$c-red : #F25F5C;
+$c-blue : #17BEBB;
+$c-green : #7fb069;
+
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+.full{
+    height: 100%;
+}
+
+#vertical-tabs{
+    background-color: $c-blue;
+    padding: 0px!important;
+    a{
+        color: $c-red;
+        padding: 16px;
+        display: block;
+        text-align: center;
+        transition: 0.5s;
+        background-color: $c-blue;
+        &:hover{
+            color: $c-green;
+            transition: 0.5s;
+        }
+    }
+    .active{
+        background-color: $c-grey;
+        color: $c-blue;
+    }
+    i{
+        font-size: 32px;
+    }
+}
+
+.collection-item{
+    i{
+        margin-right: 5px;
+    }
+    &:hover{
+        color: $c-blue;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    &::after{
+        content: '';
+        display: block;
+        margin-top: 5px;
+        width: 0;
+        height: 2px;
+        background: $c-green;
+        transition: .5s;
+    }
+    &:hover::after{
+        width: 25%;
+    }
+}
+
+#content{
+    overflow-y: scroll;
+    background-color: $c-grey;
+    padding: 16px;
+}
+
