@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,47 +10,66 @@
     <link rel="stylesheet" href="css/main.css">
     <title>IGCSE Toolkit</title>
 </head>
-<body>
-<div class="row full">
-    <div class="col s1 vertical-tabs full" id="vertical-tabs">
-        <a class="v-tab-links darken-4" onclick="openVTab(event, 'past-paper-div')" id="v-defaultOpen">
-        <i class="icon ion-md-paper"></i>
-        </a>
-        <a class="v-tab-links darken-4" onclick="openVTab(event, 'note-div')">
-            <i class="icon ion-md-list"></i>
-        </a>
-        <a class="v-tab-links darken-4" onclick="openVTab(event, 'resource-div')">
-            <i class="icon ion-md-book"></i>
-        </a>
-    </div>
-    <div class="col s11 content full" id="content">
-        <div class="">
-            <div class="v-tab-content" id="past-paper-div">
-                <div id="past-paper-list">
 
-                </div>
-                <div id="past-paper-content">
-                    <iframe src="./src/past-papers/Biology-(0610)/2008/2008 Oct_Nov/0610_w08_gt.pdf" frameborder="0"></iframe>
-                </div>
+<body>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large teal lighten-2"><i class="icon ion-md-menu"></i></a>
+        <ul>
+            <li>
+                <a class="btn-floating purple" onclick="toggleSide()" id="toggle-sidebar"><i class="icon ion-md-expand"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div class="row full">
+        <div class="col s1 vertical-tabs full" id="vertical-tabs">
+            <a class="v-tab-links darken-4" onclick="openVTab(event, 'past-paper-div')" id="v-defaultOpen">
+                <i class="icon ion-md-journal"></i>
+            </a>
+            <a class="v-tab-links darken-4" onclick="openVTab(event, 'note-div')">
+                <i class="icon ion-md-list"></i>
+            </a>
+            <a class="v-tab-links darken-4" onclick="openVTab(event, 'resource-div')">
+                <i class="icon ion-md-school"></i>
+            </a>
+        </div>
+        <div class="col s3 content full" id="content">
+            <div class="v-tab-content" id="past-paper-div">
+                <div class="right-align" id="past-paper-back"></div>
+                <div id="past-paper-list"></div>
             </div>
             <div class="v-tab-content" id="note-div">
-                Note
+                <div class="right-align" id="note-back"></div>
+                <div id="note-list"></div>
             </div>
             <div class="v-tab-content" id="resource-div">
-                Resource
+                <div class="right-align" id="resource-back"></div>
+                <div id="resource-list"></div>
             </div>
         </div>
+        <div class="col s8 full" id="viewer">
+            <div id="viewer-iframe"></div>
+        </div>
+        <div class="col s12 purple lighten-2 white-text center-align">
+            <br>
+            <h5>Made By Mudit Somani</h5>
+            <br>
+        </div>
     </div>
-    <div class="col s12 red lighten-2 white-text center-align">
-        Made By Mudit Somani
-    </div>
-</div>
-    
 
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/hammerjs/hammer.min.js"></script>
-<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
-<script src="src/vertical-tabs.js"></script>
-<script src="src/past-paper.js"></script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/hammerjs/hammer.min.js"></script>
+    <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="src/vertical-tabs.js"></script>
+    <script src="src/past-paper.js"></script>
+    <script src="src/notes.js"></script>
+    <script src="src/resources.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var floatBtn = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(floatBtn, {});
+    });
+    </script>
 </body>
+
 </html>

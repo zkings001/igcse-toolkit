@@ -8,14 +8,20 @@ function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
         width: 800,
-        height: 600
+        height: 600,
+        webPreferences: {
+            plugins: true
+        }
     })
 
     // and load the index.html of the app.
     win.loadFile('index.html')
 
+    //Remove Menu
+    // win.setMenu(null);
+
     // Open the DevTools.
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', () => {

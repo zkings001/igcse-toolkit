@@ -13,8 +13,25 @@ html,body{
     width: 0px;
 }
 
+.fixed-action-btn{
+
+    i{
+        margin: 0!important;
+        font-size: 20px;
+    }
+}
+
 .full{
     height: 100%;
+}
+
+.icon{
+    margin: 5px;
+}
+
+.breadcrumb::before{
+    content: "\f284"!important;
+    font-family: 'Ionicons'!important;
 }
 
 #vertical-tabs{
@@ -25,11 +42,11 @@ html,body{
         padding: 16px;
         display: block;
         text-align: center;
-        transition: 0.5s;
+        transition: 0.75s;
         background-color: $c-blue;
         &:hover{
-            color: $c-green;
-            transition: 0.5s;
+            background-color: lighten($c-grey,10%);
+            transition: 0.75s;
         }
     }
     .active{
@@ -50,18 +67,6 @@ html,body{
         cursor: pointer;
         transition: 0.5s;
     }
-    &::after{
-        content: '';
-        display: block;
-        margin-top: 5px;
-        width: 0;
-        height: 2px;
-        background: $c-green;
-        transition: .5s;
-    }
-    &:hover::after{
-        width: 25%;
-    }
 }
 
 #content{
@@ -70,3 +75,12 @@ html,body{
     padding: 16px;
 }
 
+#viewer{
+    overflow-y: scroll;
+    background-color: $c-red;
+    iframe {
+        width: 100%;
+        height: 95vh;
+        display: block;
+    }
+}
