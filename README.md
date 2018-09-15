@@ -14,11 +14,15 @@ Download The Past Papers from [Here](https://drive.google.com/drive/folders/0Bzu
 
 ![IGCSE Center Website](./readme/download.JPG)
 
+---------------------------
+
 
 
 Extract the downloaded zip to __*installed path*/src/past-papers__
 
-![Extract](readme\extract.JPG)
+![Extract](readme/extract.JPG)
+
+-------------------------------------
 
 
 
