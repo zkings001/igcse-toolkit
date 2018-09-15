@@ -32,6 +32,11 @@ function openDirectoryNotes(id) {
 
 function openFileNotes(id) {
     path = id.replace(/%/gi, " ");
+    if (production) {
+        path = path.split('/');
+        path.splice(1, 2);
+        path = path.join('/');
+    }
     console.log(path);
     $('#viewer-iframe').html(`
     <br>
@@ -44,7 +49,13 @@ function openFileNotes(id) {
 }
 
 function noteOpenExternal(id){
-    temp = id.split('/');
+    temp = id.replace(/%/gi, " ");
+    if (production) {
+        temp = temp.split('/');
+        temp.splice(1, 2);
+        temp = temp.join('/');
+    }
+    temp = temp.split('/');
     temp.splice(0,1);
     temp = temp.join('\\');
     finalPath = __dirname + "\\" + temp;
@@ -53,7 +64,11 @@ function noteOpenExternal(id){
 }
 
 function noteBack(id) {
-    if (!(id == './src')) {
+    var pathRoot = './resources/app/src';
+    if (!(production)) {
+        pathRoot = './src'
+    }
+    if (!(id == pathRoot)) {
         readNotes(id);
         temp = id
         temp = temp.split('/');
@@ -64,4 +79,9 @@ function noteBack(id) {
     }
 }
 
-readNotes("./src/notes")
+if (production){
+    readNotes("./resources/app/src/notes")
+}
+else{
+    readNotes("./src/notes")
+}

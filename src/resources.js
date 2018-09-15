@@ -1,3 +1,4 @@
+
 function readResource(path) {
     path = path + "/";
     fs.readdir(path, (err, files) => {
@@ -31,6 +32,11 @@ function openDirectoryResources(id) {
 
 function openFileResources(id) {
     path = id.replace(/%/gi, " ");
+    if (production){
+        path = path.split('/');
+        path.splice(1,2);
+        path = path.join('/');
+    }
     console.log(path);
     $('#viewer-iframe').html(`
     <br>
@@ -44,6 +50,11 @@ function openFileResources(id) {
 
 function resourceOpenExternal(id){
     temp = id.replace(/%/gi, " ");
+    if (production) {
+        temp = temp.split('/');
+        temp.splice(1, 2);
+        temp = temp.join('/');
+    }
     temp = temp.split('/');
     temp.splice(0,1);
     temp = temp.join('\\');
@@ -54,7 +65,11 @@ function resourceOpenExternal(id){
 
 
 function resourceBack(id) {
-    if (!(id == './src')) {
+    var pathRoot = './resources/app/src';
+    if (!(production)) {
+        pathRoot = './src'
+    }
+    if (!(id == pathRoot)) {
         readResource(id);
         temp = id
         temp = temp.split('/');
@@ -65,4 +80,9 @@ function resourceBack(id) {
     }
 }
 
-readResource("./src/resources")
+if (production){
+    readResource("./resources/app/src/resources");
+}
+else {
+    readResource("./src/resources");
+}

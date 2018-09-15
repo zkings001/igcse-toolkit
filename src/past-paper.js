@@ -1,10 +1,3 @@
-const fs = require('fs');
-const $ = require('jquery');
-
-const {
-    shell
-} = require('electron');
-
 function readPastPapers(path) {
     path = path + "/";
     fs.readdir(path, (err, files) => {
@@ -37,6 +30,11 @@ function openDirectoryPastPaper(id) {
 
 function openFilePastPaper(id) {
     path = id.replace(/%/gi, " ");
+    if (production) {
+        path = path.split('/');
+        path.splice(1, 2);
+        path = path.join('/');
+    }
     console.log(path);
     $('#viewer-iframe').html(`<br>
     <iframe id="past-paper-iframe" src="${path}" frameborder="0" class="z-depth-5 scale-transition scale-out"></iframe>`);
@@ -48,6 +46,11 @@ function openFilePastPaper(id) {
 
 function pastPaperOpenExternal(id) {
     temp = id.replace(/%/gi, " ");
+    if (production) {
+        temp = temp.split('/');
+        temp.splice(1, 2);
+        temp = temp.join('/');
+    }
     temp = temp.split('/');
     temp.splice(0, 1);
     temp = temp.join('\\');
@@ -58,7 +61,11 @@ function pastPaperOpenExternal(id) {
 
 
 function pastPaperBack(id) {
-    if (!(id == './src')) {
+    var pathRoot = './resources/app/src';
+    if (!(production)){
+        pathRoot = './src'
+    }
+    if (!(id == pathRoot)) {
         readPastPapers(id);
         temp = id
         temp = temp.split('/');
@@ -70,4 +77,9 @@ function pastPaperBack(id) {
 }
 
 
-readPastPapers("./src/past-papers");
+if (production){
+    readPastPapers("./resources/app/src/past-papers");
+}
+else {
+    readPastPapers("./src/past-papers");
+}
