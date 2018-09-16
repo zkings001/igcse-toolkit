@@ -3,4 +3,4 @@ var M = require('materialize-css');
 var production = true;
 var {shell} = require('electron');
 var fs = require('fs');
-var lol = "This is an Easter Egg"
+var mudit = "This is an Easter Egg"

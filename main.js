@@ -11,7 +11,10 @@ let win
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        show: false
+        show: false,
+        webPreferences: {
+            plugins: true
+        }
     })
     win.once('ready-to-show', () => {
         win.maximize();
