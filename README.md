@@ -41,7 +41,7 @@ Open IGCSE Toolkit and *voila*
 
 - Right Click files to open them in the native application.
 - Notes and Resources come out of the box (However you can import or remove them).
-
+- You can edit the source code of your app.
 - Visit my [Website](https://thecomputerm.github.io/).
 
 
