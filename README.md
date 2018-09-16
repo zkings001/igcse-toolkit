@@ -6,33 +6,9 @@
 
 
 
-An app to help you get good grades
+### <div style="text-align:center">An app to help you get good  grades</div>
 
 
-
-## How to download IGCSE Toolkit
-
-- Make sure that NodeJS and npm is installed
-
-- Run 
-
-  ```bash
-  npm i yarn -g
-  ```
-
-- Clone this repository through git or zip
-
-- Run in where you installed the repo
-
-- ```bash
-  yarn
-  ```
-
-  Then run 
-
-  ```bash
-  yarn start
-  ```
 
 
 
@@ -47,7 +23,7 @@ Download The Past Papers from [Here](https://drive.google.com/drive/folders/0Bzu
 
 
 
-Extract the downloaded zip to __*installed path*/src/past-papers__
+Extract the downloaded zip to __*installed path*/resources/app/src/past-papers__
 
 ![Extract](readme/extract.JPG)
 
