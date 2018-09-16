@@ -1,8 +1,9 @@
 const {
     app,
-    BrowserWindow
+    BrowserWindow,
+    Menu,
+    globalShortcut
 } = require('electron')
-
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -10,27 +11,19 @@ let win
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        width: 800,
-        height: 600,
-        webPreferences: {
-            plugins: true
-        }
+        show: false
     })
-
     win.once('ready-to-show', () => {
         win.maximize();
         win.show()
     });
 
+
+    // win.setMenu(null);
     // and load the index.html of the app.
     win.loadFile('index.html')
 
-    //Remove Menu
-    // win.setMenu(null);
-
-    // Open the DevTools.
-    // win.webContents.openDevTools()
-
+    // win.webContents.openDevTools();
     // Emitted when the window is closed.
     win.on('closed', () => {
         // Dereference the window object, usually you would store windows
@@ -43,7 +36,12 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', () => {
+    createWindow();
+    globalShortcut.register('Ctrl+Shift+I', ()=>{
+        win.webContents.openDevTools();
+    })
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
