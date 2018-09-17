@@ -4,3 +4,8 @@ var production = false;
 var {shell} = require('electron');
 var fs = require('fs');
 var mudit = "This is an Easter Egg"
+
+$(document).ready(() => {
+    var floatingBtn = document.querySelector('.fixed-action-btn');
+    var floatingBtnInstance = M.FloatingActionButton.init(floatingBtn, {})
+})

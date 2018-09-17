@@ -14,9 +14,15 @@ html,body{
 }
 
 .fixed-action-btn{
-    i{
+    i.ion-md-menu{
         margin: 0!important;
         font-size: 26px;
+    }
+    ul {
+        i{
+            font-size: 18px;
+            margin: 0!important;
+        }
     }
 }
 
