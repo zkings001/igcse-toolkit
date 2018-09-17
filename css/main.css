@@ -9,7 +9,7 @@ html, body {
 
 .fixed-action-btn i {
   margin: 0 !important;
-  font-size: 20px; }
+  font-size: 26px; }
 
 .full {
   height: 100%; }
@@ -25,18 +25,20 @@ html, body {
   background-color: #17BEBB;
   padding: 0px !important; }
   #vertical-tabs a {
-    color: #F25F5C;
+    color: #ffffff;
     padding: 16px;
     display: block;
     text-align: center;
     transition: 0.75s;
-    background-color: #17BEBB; }
+    background-color: #17BEBB;
+    border-left: #17BEBB 5px solid; }
     #vertical-tabs a:hover {
       background-color: #3b3b3b;
       transition: 0.75s; }
   #vertical-tabs .active {
     background-color: #212121;
-    color: #17BEBB; }
+    color: #17BEBB;
+    border-left: #7fb069 5px solid; }
   #vertical-tabs i {
     font-size: 32px; }
 

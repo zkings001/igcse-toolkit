@@ -16,7 +16,9 @@
         <a class="btn-floating btn-large teal lighten-2"><i class="icon ion-md-menu"></i></a>
         <ul>
             <li>
-                <a class="btn-floating purple" onclick="toggleSide()" id="toggle-sidebar"><i class="icon ion-md-expand"></i></a>
+                <a class="btn-floating purple" onclick="toggleSide()" id="toggle-sidebar">
+                    <i class="icon ion-md-expand"></i>
+                </a>
             </li>
         </ul>
     </div>
@@ -24,12 +26,15 @@
         <div class="col s1 vertical-tabs full" id="vertical-tabs">
             <a class="v-tab-links darken-4" onclick="openVTab(event, 'past-paper-div')" id="v-defaultOpen">
                 <i class="icon ion-md-journal"></i>
+                <p><b>Past Papers</b></p>
             </a>
             <a class="v-tab-links darken-4" onclick="openVTab(event, 'note-div')">
                 <i class="icon ion-md-list"></i>
+                <p><b>Notes</b></p>
             </a>
             <a class="v-tab-links darken-4" onclick="openVTab(event, 'resource-div')">
                 <i class="icon ion-md-school"></i>
+                <p><b>Resources</b></p>
             </a>
         </div>
         <div class="col s3 content full" id="content">

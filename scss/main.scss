@@ -14,10 +14,9 @@ html,body{
 }
 
 .fixed-action-btn{
-
     i{
         margin: 0!important;
-        font-size: 20px;
+        font-size: 26px;
     }
 }
 
@@ -38,12 +37,13 @@ html,body{
     background-color: $c-blue;
     padding: 0px!important;
     a{
-        color: $c-red;
+        color: #ffffff;
         padding: 16px;
         display: block;
         text-align: center;
         transition: 0.75s;
         background-color: $c-blue;
+        border-left: $c-blue 5px solid;
         &:hover{
             background-color: lighten($c-grey,10%);
             transition: 0.75s;
@@ -52,6 +52,7 @@ html,body{
     .active{
         background-color: $c-grey;
         color: $c-blue;
+        border-left: $c-green 5px solid;
     }
     i{
         font-size: 32px;
