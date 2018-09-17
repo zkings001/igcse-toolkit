@@ -40,7 +40,7 @@ function openFileNotes(id) {
     console.log(path);
     $('#viewer-iframe').html(`
     <br>
-    <iframe id="note-iframe" src="${path}" frameborder="0" class="z-depth-5 scale-transition scale-out"></iframe>
+    <iframe id="note-iframe" src="${__dirname}/src/web/viewer.html?file=${path}" frameborder="0" class="z-depth-5 scale-transition scale-out"></iframe>
     `);
     setTimeout(() => {
         $('#note-iframe').removeClass('scale-out');
