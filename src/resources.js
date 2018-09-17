@@ -76,7 +76,7 @@ function resourceBack(id) {
         temp.splice(-1, 1);
         temp = temp.join('/');
         console.log(temp);
-        $('#resource-back').html(`<button class="btn blue lighten-2" id="${temp}" onclick="resourceBack(this.id)"><i class="icon ion-md-arrow-back"></i> Back</button>`);
+        $('#resource-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${temp}" onclick="resourceBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
     }
 }
 

@@ -26,7 +26,7 @@ function openDirectoryNotes(id) {
     backId.splice(-1, 1);
     backId = backId.join('/');
     console.log(backId);
-    $('#note-back').html(`<button class="btn blue lighten-2" id="${backId}" onclick="noteBack(this.id)"><i class="icon ion-md-arrow-back"></i> Back</button>`);
+    $('#note-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${backId}" onclick="noteBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
     readNotes(temp);
 }
 
@@ -40,7 +40,7 @@ function openFileNotes(id) {
     console.log(path);
     $('#viewer-iframe').html(`
     <br>
-    <iframe id="note-iframe" src="${__dirname}/src/web/viewer.html?file=${path}" frameborder="0" class="z-depth-5 scale-transition scale-out"></iframe>
+    <iframe id="note-iframe" src="${path}" frameborder="0" class="z-depth-5 scale-transition scale-out"></iframe>
     `);
     setTimeout(() => {
         $('#note-iframe').removeClass('scale-out');
