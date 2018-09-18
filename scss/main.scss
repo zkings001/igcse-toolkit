@@ -3,23 +3,24 @@ $c-red : #F25F5C;
 $c-blue : #17BEBB;
 $c-green : #7fb069;
 
-html,body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body::-webkit-scrollbar {
-    width: .45rem;
+    width: 3px;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(27, 27, 27, .4);
-    border-radius: 3px;
+    background-color:$c-blue;
+    border-radius: 5px;
 }
 
 body::-webkit-scrollbar-track {
-    background: transparent;
+    background: $c-red;
 }
 
 
@@ -28,24 +29,22 @@ body::-webkit-scrollbar-track {
 }
 
 nav {
-    .nav-wrapper {
-        background-color: rgb(51, 51, 51);
-    }
-
     .brand-logo {
         -webkit-app-region: drag;
         font-size: 26px;
     }
 
     li {
-        font-size: 16px;
         color: lighten($c-grey, 15%);
 
-        &:hover {
+        i {
+            font-size: 16px;
             color: white;
         }
+        &:hover {
+            background-color: $c-red;
+        }
     }
-
     i {
         margin: 0px !important;
         padding: 0px 16px;
@@ -57,7 +56,10 @@ nav {
     line-height: 40px;
 }
 
-nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+nav i,
+nav [class^="mdi-"],
+nav [class*="mdi-"],
+nav i.material-icons {
     height: 40px;
     line-height: 40px;
 }
@@ -67,12 +69,15 @@ nav .button-collapse i {
     line-height: 40px;
 }
 
-nav .brand-logo { 
-    font-size: 1.6rem; 
+nav .brand-logo {
+    font-size: 1.6rem;
 }
 
-@media only screen and (min-width: 601px){
-    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+@media only screen and (min-width: 601px) {
+    nav,
+    nav .nav-wrapper i,
+    nav a.button-collapse,
+    nav a.button-collapse i {
         height: 40px;
         line-height: 40px;
     }
@@ -83,6 +88,7 @@ nav .brand-logo {
         margin: 0 !important;
         font-size: 26px;
     }
+
     ul {
         i {
             font-size: 18px;
@@ -102,7 +108,6 @@ nav .brand-logo {
 #vertical-tabs {
     background-color: $c-blue;
     padding: 0px !important;
-
     a {
         color: #ffffff;
         padding: 16px;
@@ -157,6 +162,7 @@ nav .brand-logo {
 #viewer {
     overflow-y: scroll;
     background-color: $c-red;
+
     iframe {
         width: 100%;
         height: 95vh;
@@ -164,7 +170,7 @@ nav .brand-logo {
     }
 }
 
-#timerView{
+#timerView {
     color: rgba(255, 255, 255, 0.5);
     text-align: center;
     font-size: 34px;

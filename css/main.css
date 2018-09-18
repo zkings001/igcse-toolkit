@@ -1,33 +1,33 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0; }
 
 body::-webkit-scrollbar {
-  width: .45rem; }
+  width: 3px; }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(27, 27, 27, 0.4);
-  border-radius: 3px; }
+  background-color: #17BEBB;
+  border-radius: 5px; }
 
 body::-webkit-scrollbar-track {
-  background: transparent; }
+  background: #F25F5C; }
 
 ::-webkit-scrollbar {
   width: 0px; }
-
-nav .nav-wrapper {
-  background-color: #333333; }
 
 nav .brand-logo {
   -webkit-app-region: drag;
   font-size: 26px; }
 
 nav li {
-  font-size: 16px;
   color: #474747; }
-  nav li:hover {
+  nav li i {
+    font-size: 16px;
     color: white; }
+  nav li:hover {
+    background-color: #F25F5C; }
 
 nav i {
   margin: 0px !important;
@@ -37,7 +37,10 @@ nav {
   height: 40px;
   line-height: 40px; }
 
-nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+nav i,
+nav [class^="mdi-"],
+nav [class*="mdi-"],
+nav i.material-icons {
   height: 40px;
   line-height: 40px; }
 
@@ -49,7 +52,10 @@ nav .brand-logo {
   font-size: 1.6rem; }
 
 @media only screen and (min-width: 601px) {
-  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+  nav,
+  nav .nav-wrapper i,
+  nav a.button-collapse,
+  nav a.button-collapse i {
     height: 40px;
     line-height: 40px; } }
 
