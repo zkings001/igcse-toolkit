@@ -13,6 +13,24 @@ html,body{
     width: 0px;
 }
 
+nav{
+    .nav-wrapper{
+        background-color: $c-grey;
+    }
+    .brand-logo{
+        font-size: 26px;
+    }
+    i{
+        font-size: 16px;
+        padding: 0px 8px;
+        margin: 0px!important;
+        color: lighten($c-grey,15%);
+        &:hover{
+            color: white;
+        }
+    }
+}
+
 .fixed-action-btn{
     i.ion-md-menu{
         margin: 0!important;
@@ -32,11 +50,6 @@ html,body{
 
 .icon{
     margin: 5px;
-}
-
-.breadcrumb::before{
-    content: "\f284"!important;
-    font-family: 'Ionicons'!important;
 }
 
 #vertical-tabs{

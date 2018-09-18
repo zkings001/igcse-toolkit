@@ -11,6 +11,7 @@ let win
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
+        frame: false,
         show: false,
         webPreferences: {
             plugins: true
@@ -22,7 +23,7 @@ function createWindow() {
     });
 
 
-    // win.setMenu(null);
+    win.setMenu(null);
     // and load the index.html of the app.
     win.loadFile('index.html')
 
@@ -43,6 +44,9 @@ app.on('ready', () => {
     createWindow();
     globalShortcut.register('Ctrl+Shift+I', ()=>{
         win.webContents.openDevTools();
+    });
+    globalShortcut.register('Ctrl+Shift+R', ()=>{
+        win.reload();
     })
 })
 
