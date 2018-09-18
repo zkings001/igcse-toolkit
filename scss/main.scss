@@ -3,12 +3,25 @@ $c-red : #F25F5C;
 $c-blue : #17BEBB;
 $c-green : #7fb069;
 
-html,
-body {
+html,body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
+
+body::-webkit-scrollbar {
+    width: .45rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(27, 27, 27, .4);
+    border-radius: 3px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 
 ::-webkit-scrollbar {
     width: 0px;
@@ -16,7 +29,7 @@ body {
 
 nav {
     .nav-wrapper {
-        background-color: $c-grey;
+        background-color: lighten($c-grey,10%);
     }
 
     .brand-logo {
@@ -35,7 +48,7 @@ nav {
 
     i {
         margin: 0px !important;
-        padding: 0px 8px;
+        padding: 0px 16px;
     }
 }
 
@@ -123,4 +136,11 @@ nav {
         height: 95vh;
         display: block;
     }
+}
+
+#timerView{
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
 }

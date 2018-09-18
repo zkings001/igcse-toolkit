@@ -21,6 +21,7 @@ function toggleSide(){
         $('#viewer').removeClass('s8');
         $('#viewer').addClass('s12');
         $('#toggle-sidebar').html('<i class="icon ion-md-contract"></i>');
+        $('nav').css('display', 'none');
         sidebar = false;
     } else{
         $('#vertical-tabs').css('display', 'block');
@@ -28,6 +29,7 @@ function toggleSide(){
         $('#viewer').removeClass('s12');
         $('#viewer').addClass('s8');
         $('#toggle-sidebar').html('<i class="icon ion-md-expand"></i>');
+        $('nav').css('display', 'block');
         sidebar = true;
     }
 }
