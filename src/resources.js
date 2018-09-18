@@ -10,9 +10,9 @@ function readResource(path) {
                 let theID = `${path.replace(/ /gi, "%")}${file.replace(/ /gi, "%")}`;
                 if (err) throw err;
                 if (stats.isDirectory()) {
-                    document.getElementById('display-resources').innerHTML += `<li id="${theID}" onclick="openDirectoryResources(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</li>`;
+                    document.getElementById('display-resources').innerHTML += `<a id="${theID}" onclick="openDirectoryResources(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</a>`;
                 } else {
-                    document.getElementById('display-resources').innerHTML += `<li id="${theID}" onclick="openFileResources(this.id)" oncontextmenu="resourceOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</li>`;
+                    document.getElementById('display-resources').innerHTML += `<a id="${theID}" onclick="openFileResources(this.id)" oncontextmenu="resourceOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</a>`;
                 }
             });
         }
@@ -26,7 +26,7 @@ function openDirectoryResources(id) {
     backId.splice(-1, 1);
     backId = backId.join('/');
     console.log(backId);
-    $('#resource-back').html(`<button class="btn blue lighten-2" id="${backId}" onclick="resourceBack(this.id)"><i class="icon ion-md-arrow-back"></i> Back</button>`);
+    $('#resource-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${temp}" onclick="resourceBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
     readResource(temp);
 }
 

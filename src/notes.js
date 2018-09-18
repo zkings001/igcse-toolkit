@@ -9,10 +9,10 @@ function readNotes(path) {
                 let theID = `${path.replace(/ /gi, "%")}${file.replace(/ /gi, "%")}`;
                 if (err) throw err;
                 if (stats.isDirectory()) {
-                    document.getElementById('display-notes').innerHTML += `<li id="${theID}" onclick="openDirectoryNotes(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</li>`;
+                    document.getElementById('display-notes').innerHTML += `<a id="${theID}" onclick="openDirectoryNotes(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</a>`;
                 }
                 else {
-                    document.getElementById('display-notes').innerHTML += `<li id="${theID}" onclick="openFileNotes(this.id)" oncontextmenu="noteOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</li>`;
+                    document.getElementById('display-notes').innerHTML += `<a id="${theID}" onclick="openFileNotes(this.id)" oncontextmenu="noteOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</a>`;
                 }
             });
         }
@@ -75,7 +75,7 @@ function noteBack(id) {
         temp.splice(-1, 1);
         temp = temp.join('/');
         console.log(temp);
-        $('#note-back').html(`<button class="btn blue lighten-2" id="${temp}" onclick="noteBack(this.id)"><i class="icon ion-md-arrow-back"></i> Back</button>`);
+        $('#note-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${backId}" onclick="noteBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
     }
 }
 

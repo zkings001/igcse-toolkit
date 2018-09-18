@@ -9,9 +9,9 @@ function readPastPapers(path) {
                 let theID = `${path.replace(/ /gi, "%")}${file.replace(/ /gi, "%")}`;
                 if (err) throw err;
                 if (stats.isDirectory()) {
-                    document.getElementById('display-past-paper').innerHTML += `<li id="${theID}" onclick="openDirectoryPastPaper(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</li>`;
+                    document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openDirectoryPastPaper(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</a>`;
                 } else {
-                    document.getElementById('display-past-paper').innerHTML += `<li id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}</li>`;
+                    document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}</a>`;
                 }
             });
         }
@@ -24,7 +24,7 @@ function openDirectoryPastPaper(id) {
     backId.splice(-1, 1);
     backId = backId.join('/');
     console.log(backId);
-    $('#past-paper-back').html(`<button class="btn blue lighten-2" id="${backId}" onclick="pastPaperBack(this.id)"><i class="icon ion-md-arrow-back"></i> Back</button>`);
+    $('#past-paper-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${temp}" onclick="pastPaperBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
     readPastPapers(temp);
 }
 
