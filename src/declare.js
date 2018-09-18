@@ -1,10 +1,7 @@
 var $ = require('jquery');
 var M = require('materialize-css');
-var production = false;
-var {
-    shell,
-    remote
-} = require('electron');
+var production = true;
+var {shell,remote} = require('electron');
 var fs = require('fs');
 var mudit = "This is an Easter Egg"
 var win = remote.getCurrentWindow()
@@ -52,7 +49,9 @@ $('#timerCreate').click(() => {
         count = count - 1;
         if (count == -1) {
             clearInterval(counter);
-            return "Timer Up";
+            $('#timerView').text("Timer Done");
+            return;
+            
         }
 
         var seconds = count % 60;

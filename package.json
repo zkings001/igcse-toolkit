@@ -6,7 +6,7 @@
   "author": "TheComputerM",
   "scripts": {
     "start": "gulp sass && electron .",
-    "package-win-32": "electron-packager . IGCSE-Toolkit --overwrite --no-asar --platform=win32 --icon=readme/icon.ico --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=TheComputerM --version-string.FileDescription=CE --version-string.ProductName=\"IGCSE Toolkit\""
+    "package-win-32": "electron-packager . IGCSE-Toolkit --overwrite --no-asar --platform=win32 --icon=readme/icon.ico --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=TheComputerM --version-string.FileDescription=Study --version-string.ProductName=\"IGCSE Toolkit\""
   },
   "license": "MIT",
   "dependencies": {
