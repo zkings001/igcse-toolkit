@@ -17,7 +17,7 @@ body::-webkit-scrollbar-track {
   width: 0px; }
 
 nav .nav-wrapper {
-  background-color: #3b3b3b; }
+  background-color: #333333; }
 
 nav .brand-logo {
   -webkit-app-region: drag;
@@ -32,6 +32,26 @@ nav li {
 nav i {
   margin: 0px !important;
   padding: 0px 16px; }
+
+nav {
+  height: 40px;
+  line-height: 40px; }
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+  height: 40px;
+  line-height: 40px; }
+
+nav .button-collapse i {
+  height: 40px;
+  line-height: 40px; }
+
+nav .brand-logo {
+  font-size: 1.6rem; }
+
+@media only screen and (min-width: 601px) {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 40px;
+    line-height: 40px; } }
 
 .fixed-action-btn i.ion-md-menu {
   margin: 0 !important;
