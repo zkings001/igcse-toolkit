@@ -3,8 +3,7 @@ $c-red : #F25F5C;
 $c-blue : #17BEBB;
 $c-green : #7fb069;
 
-html,
-body {
+html,body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -36,7 +35,6 @@ nav {
 
     li {
         color: lighten($c-grey, 15%);
-
         i {
             font-size: 16px;
             color: white;
@@ -171,8 +169,12 @@ nav .brand-logo {
 }
 
 #timerView {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(127, 176, 105, 0.5);
     text-align: center;
     font-size: 34px;
     font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
 }
