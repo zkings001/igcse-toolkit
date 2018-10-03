@@ -1,11 +1,11 @@
 {
   "name": "igcse-toolkit",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "An app to help you get good grades",
   "main": "main.js",
   "author": "TheComputerM",
   "scripts": {
-    "start": "gulp sass && electron .",
+    "start": "electron .",
     "package-win-32": "electron-packager . IGCSE-Toolkit --overwrite --no-asar --platform=win32 --icon=readme/icon.ico --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=TheComputerM --version-string.FileDescription=Study --version-string.ProductName=\"IGCSE Toolkit\""
   },
   "license": "MIT",
@@ -17,8 +17,6 @@
     "materialize-css": "^1.0.0"
   },
   "devDependencies": {
-    "electron-packager": "^12.1.2",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1"
+    "electron-packager": "^12.1.2"
   }
 }

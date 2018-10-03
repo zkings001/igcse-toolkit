@@ -11,7 +11,13 @@ function readPastPapers(path) {
                 if (stats.isDirectory()) {
                     document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openDirectoryPastPaper(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</a>`;
                 } else {
-                    document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}</a>`;
+                    if (file.includes('qp')){
+                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}<span class="badge purple grey-text text-lighten-2">question paper</span></a>`;
+                    } else if (file.includes('ms')){
+                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}<span class="badge purple grey-text text-lighten-2">marking scheme</span></a>`;
+                    } else{
+                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}</a>`;
+                    }
                 }
             });
         }
@@ -24,7 +30,7 @@ function openDirectoryPastPaper(id) {
     backId.splice(-1, 1);
     backId = backId.join('/');
     console.log(backId);
-    $('#past-paper-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${temp}" onclick="pastPaperBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
+    $('#past-paper-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="pastPaperBack(this.id)">Back</button>`);
     readPastPapers(temp);
 }
 
@@ -36,12 +42,8 @@ function openFilePastPaper(id) {
         path = path.join('/');
     }
     console.log(path);
-    $('#viewer-iframe').html(`<br>
-    <iframe id="past-paper-iframe" src="${path}" frameborder="0" class="z-depth-5 scale-transition scale-out"></iframe>`);
-    setTimeout(() => {
-        $('#past-paper-iframe').removeClass('scale-out');
-        $('#past-paper-iframe').addClass('scale-in')
-    }, 500)
+    $('#viewer-iframe').html(`
+    <iframe id="past-paper-iframe" src="${path}" frameborder="0" class="z-depth-4"></iframe>`);
 }
 
 function pastPaperOpenExternal(id) {
@@ -72,7 +74,7 @@ function pastPaperBack(id) {
         temp.splice(-1, 1);
         temp = temp.join('/');
         console.log(temp);
-        $('#past-paper-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${temp}" onclick="pastPaperBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
+        $('#past-paper-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="pastPaperBack(this.id)">Back</button>`);
     }
 }
 

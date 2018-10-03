@@ -26,7 +26,7 @@ function openDirectoryResources(id) {
     backId.splice(-1, 1);
     backId = backId.join('/');
     console.log(backId);
-    $('#resource-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${temp}" onclick="resourceBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
+    $('#resource-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="resourceBack(this.id)">Back</button>`);
     readResource(temp);
 }
 
@@ -39,13 +39,8 @@ function openFileResources(id) {
     }
     console.log(path);
     $('#viewer-iframe').html(`
-    <br>
-    <iframe id="resource-iframe" src="${path}" frameborder="0" class="z-depth-5 scale-transition scale-out"></iframe>
+    <iframe id="resource-iframe" src="${path}" frameborder="0" class="z-depth-4"></iframe>
     `);
-    setTimeout(() => {
-        $('#resource-iframe').removeClass('scale-out');
-        $('#resource-iframe').addClass('scale-in')
-    }, 500)
 }
 
 function resourceOpenExternal(id){
@@ -76,7 +71,7 @@ function resourceBack(id) {
         temp.splice(-1, 1);
         temp = temp.join('/');
         console.log(temp);
-        $('#resource-back').html(`<button class="btn green btn-flat white-text lighten-2" id="${temp}" onclick="resourceBack(this.id)"><i class="icon ion-md-arrow-round-back"></i></button>`);
+        $('#resource-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="resourceBack(this.id)">Back</button>`);
     }
 }
 

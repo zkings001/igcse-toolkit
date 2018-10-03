@@ -11,7 +11,6 @@ let win
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        frame: false,
         show: false,
         webPreferences: {
             plugins: true
