@@ -71,7 +71,7 @@ function resourceBack(id) {
         temp.splice(-1, 1);
         temp = temp.join('/');
         console.log(temp);
-        $('#resource-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="resourceBack(this.id)">Back</button>`);
+        $('#resource-back').html(`<button class="waves-effect waves-light btn-flat" id="${temp}" onclick="resourceBack(this.id)">Back</button>`);
     }
 }
 

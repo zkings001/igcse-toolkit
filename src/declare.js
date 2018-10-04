@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var jQuery = require('jquery');
 var M = require('materialize-css');
-var production = false;
+var production = true;
 var {shell,remote,BrowserWindow} = require('electron');
 var fs = require('fs');
 var mudit = "This is an Easter Egg"
@@ -39,11 +39,7 @@ $('#timerCreate').click(() => {
             clearInterval(counter);
             $('#timerView').text("");
             var beep = new Audio();
-            if (production){
-                beep.src = "./resources/app/dist/alarm.mp3";
-            } else{
-                beep.src = "./dist/alarm.mp3";
-            }
+            beep.src = "./dist/alarm.mp3";
             beep.play();
             M.toast({
                 html: 'Timer Done <a class="btn-flat blue-text" id="timerStop">Stop Timer</a>',

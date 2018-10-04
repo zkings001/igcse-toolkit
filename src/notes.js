@@ -71,7 +71,7 @@ function noteBack(id) {
         temp.splice(-1, 1);
         temp = temp.join('/');
         console.log(temp);
-        $('#note-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="noteBack(this.id)">Back</button>`);
+        $('#note-back').html(`<button class="waves-effect waves-light btn-flat" id="${temp}" onclick="noteBack(this.id)">Back</button>`);
     }
 }
 

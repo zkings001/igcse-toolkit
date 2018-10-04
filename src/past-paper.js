@@ -27,7 +27,7 @@ function readPastPapers(path) {
 function openDirectoryPastPaper(id) {
     temp = id.replace(/%/gi, " ");
     backId = temp.split('/');
-    backId.splice(-1, 1);
+    backId.splice(-1, 2);
     backId = backId.join('/');
     console.log(backId);
     $('#past-paper-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="pastPaperBack(this.id)">Back</button>`);
@@ -74,7 +74,7 @@ function pastPaperBack(id) {
         temp.splice(-1, 1);
         temp = temp.join('/');
         console.log(temp);
-        $('#past-paper-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="pastPaperBack(this.id)">Back</button>`);
+        $('#past-paper-back').html(`<button class="waves-effect waves-light btn-flat" id="${temp}" onclick="pastPaperBack(this.id)">Back</button>`);
     }
 }
 
