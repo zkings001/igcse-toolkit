@@ -12,7 +12,7 @@ function readResource(path) {
                 if (stats.isDirectory()) {
                     document.getElementById('display-resources').innerHTML += `<a id="${theID}" onclick="openDirectoryResources(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</a>`;
                 } else {
-                    document.getElementById('display-resources').innerHTML += `<a id="${theID}" onclick="openFileResources(this.id)" oncontextmenu="resourceOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</a>`;
+                    document.getElementById('display-resources').innerHTML += `<a id="${theID}" onclick="openFileResources(this.id)" oncontextmenu="resourceOpenExternal(this.id)" class="waves-effect waves-yellow collection-item"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</a>`;
                 }
             });
         }
@@ -25,7 +25,6 @@ function openDirectoryResources(id) {
     backId = temp.split('/');
     backId.splice(-1, 1);
     backId = backId.join('/');
-    console.log(backId);
     $('#resource-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="resourceBack(this.id)">Back</button>`);
     readResource(temp);
 }
@@ -37,7 +36,6 @@ function openFileResources(id) {
         path.splice(1,2);
         path = path.join('/');
     }
-    console.log(path);
     $('#viewer-iframe').html(`
     <iframe id="resource-iframe" src="${path}" frameborder="0" class="z-depth-4"></iframe>
     `);
@@ -54,7 +52,6 @@ function resourceOpenExternal(id){
     temp.splice(0,1);
     temp = temp.join('\\');
     finalPath = __dirname + "\\" + temp;
-    console.log(finalPath);
     shell.openItem(finalPath);
 }
 
@@ -70,7 +67,6 @@ function resourceBack(id) {
         temp = temp.split('/');
         temp.splice(-1, 1);
         temp = temp.join('/');
-        console.log(temp);
         $('#resource-back').html(`<button class="waves-effect waves-light btn-flat" id="${temp}" onclick="resourceBack(this.id)">Back</button>`);
     }
 }

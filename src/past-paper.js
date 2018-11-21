@@ -12,14 +12,14 @@ function readPastPapers(path) {
                     document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openDirectoryPastPaper(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</a>`;
                 } else {
                     if (file.includes('qp')){
-                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}<span class="badge purple grey-text text-lighten-2">question paper</span></a>`;
+                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item waves-effect waves-yellow"><i class="icon ion-md-document"></i> ${file}<span class="badge purple grey-text text-lighten-2">question paper</span></a>`;
                     } else if (file.includes('ms')){
-                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}<span class="badge purple grey-text text-lighten-2">marking scheme</span></a>`;
-                    } else{
-                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file}</a>`;
+                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item waves-effect waves-yellow"><i class="icon ion-md-document"></i> ${file}<span class="badge purple grey-text text-lighten-2">marking scheme</span></a>`;
+                    } else
+                        document.getElementById('display-past-paper').innerHTML += `<a id="${theID}" onclick="openFilePastPaper(this.id)" oncontextmenu="pastPaperOpenExternal(this.id)" class="collection-item waves-effect waves-yellow"><i class="icon ion-md-document"></i> ${file}</a>`;
                     }
                 }
-            });
+            );
         }
     });
 }
@@ -29,7 +29,6 @@ function openDirectoryPastPaper(id) {
     backId = temp.split('/');
     backId.splice(-1, 2);
     backId = backId.join('/');
-    console.log(backId);
     $('#past-paper-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="pastPaperBack(this.id)">Back</button>`);
     readPastPapers(temp);
 }
@@ -41,7 +40,6 @@ function openFilePastPaper(id) {
         path.splice(1, 2);
         path = path.join('/');
     }
-    console.log(path);
     $('#viewer-iframe').html(`
     <iframe id="past-paper-iframe" src="${path}" frameborder="0" class="z-depth-4"></iframe>`);
 }
@@ -57,7 +55,6 @@ function pastPaperOpenExternal(id) {
     temp.splice(0, 1);
     temp = temp.join('\\');
     finalPath = __dirname + "\\" + temp;
-    console.log(finalPath);
     shell.openItem(finalPath);
 }
 
@@ -73,7 +70,6 @@ function pastPaperBack(id) {
         temp = temp.split('/');
         temp.splice(-1, 1);
         temp = temp.join('/');
-        console.log(temp);
         $('#past-paper-back').html(`<button class="waves-effect waves-light btn-flat" id="${temp}" onclick="pastPaperBack(this.id)">Back</button>`);
     }
 }

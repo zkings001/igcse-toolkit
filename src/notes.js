@@ -13,7 +13,7 @@ function readNotes(path) {
                     document.getElementById('display-notes').innerHTML += `<a id="${theID}" onclick="openDirectoryNotes(this.id)" class="collection-item"><i class="icon ion-md-folder"></i> ${file.replace(/-/gi, " ")}</a>`;
                 }
                 else {
-                    document.getElementById('display-notes').innerHTML += `<a id="${theID}" onclick="openFileNotes(this.id)" oncontextmenu="noteOpenExternal(this.id)" class="collection-item"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</a>`;
+                    document.getElementById('display-notes').innerHTML += `<a id="${theID}" onclick="openFileNotes(this.id)" oncontextmenu="noteOpenExternal(this.id)" class="collection-item waves-effect waves-yellow"><i class="icon ion-md-document"></i> ${file.replace(/-/gi, " ")}</a>`;
                 }
             });
         }
@@ -26,7 +26,6 @@ function openDirectoryNotes(id) {
     backId = temp.split('/');
     backId.splice(-1, 1);
     backId = backId.join('/');
-    console.log(backId);
     $('#note-back').html(`<button class="waves-effect waves-light btn-flat" id="${backId}" onclick="noteBack(this.id)">Back</button>`);
     readNotes(temp);
 }
@@ -38,7 +37,6 @@ function openFileNotes(id) {
         path.splice(1, 2);
         path = path.join('/');
     }
-    console.log(path);
     $('#viewer-iframe').html(`
     <iframe id="note-iframe" src="${path}" frameborder="0" class="z-depth-4"></iframe>
     `);
@@ -55,7 +53,6 @@ function noteOpenExternal(id){
     temp.splice(0,1);
     temp = temp.join('\\');
     finalPath = __dirname + "\\" + temp;
-    console.log(finalPath);
     shell.openItem(finalPath);
 }
 
@@ -70,7 +67,6 @@ function noteBack(id) {
         temp = temp.split('/');
         temp.splice(-1, 1);
         temp = temp.join('/');
-        console.log(temp);
         $('#note-back').html(`<button class="waves-effect waves-light btn-flat" id="${temp}" onclick="noteBack(this.id)">Back</button>`);
     }
 }
